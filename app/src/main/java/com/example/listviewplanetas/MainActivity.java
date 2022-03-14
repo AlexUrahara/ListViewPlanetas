@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Planetas.class);
                 intent.putExtra("DESC", descripcion[i]);
                 intent.putExtra("NAME", nombres[i]);
+                intent.putExtra("IMAGE", idimagenes[i]);
                 startActivity(intent);
 
             }
