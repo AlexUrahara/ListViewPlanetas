@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListViewPlanetas">
         <activity
+            android:name=".Planetas"
+            android:exported="false" />
+        <activity
+            android:name=".tierra"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

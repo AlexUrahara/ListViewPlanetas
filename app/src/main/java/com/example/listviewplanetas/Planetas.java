@@ -21,8 +21,8 @@ public class Planetas extends AppCompatActivity {
         DescripcionPlaneta = (TextView) findViewById(R.id.DescripcionPlaneta);
         ImagenPlaneta = (ImageView) findViewById(R.id.ImagenPlaneta);
 
-        String description = getIntent().getStringExtra("Descripcion");
-        String name = getIntent().getStringExtra("Nombre");
+        String description = getIntent().getStringExtra("DESC");
+        String name = getIntent().getStringExtra("NAME");
 
         NombrePlaneta.setText(name);
         DescripcionPlaneta.setText(description);

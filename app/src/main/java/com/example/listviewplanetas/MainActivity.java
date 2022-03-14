@@ -12,66 +12,42 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView=(ListView) findViewById(R.id.listaplanetas);
-        String[] nombres = {"mercurio","venus","tierra","marte","jupiter","saturno","urano","neptuno"};
-        String[] Descripcion = {"informacion 1","informacion 2","informacion 3","informacion 4","informacion 5","informacion 6","informacion 7","informacion 8"};
-        String[] detalles = {"Mercurio es el planeta del sistema solar más cercano al Sol y el más pequeño. Forma parte de los denominados planetas interiores" +
-                " y carece de satélites naturales al igual que Venus. Se conocía muy poco sobre su superficie hasta que fue enviada la sonda planetaria Mariner 10 y" +
-                " se hicieron observaciones con radar y radiotelescopios. Posteriormente fue estudiado por la sonda MESSENGER de la NASA y actualmente la astronave de " +
-                "la Agencia Europea del Espacio (ESA) denominada BepiColombo, lanzada en octubre de 2018, se halla en vuelo rumbo a Mercurio a donde llegará en 2025 y " +
-                "se espera que aporte nuevos conocimientos sobre el origen y composición del planeta, así como de su geología y campo magnético.", "Venus es el segundo " +
-                "planeta del sistema solar en orden de proximidad al Sol y el tercero en cuanto a tamaño en orden ascendente después de Mercurio y Marte. Al igual que" +
-                " Mercurio, carece de satélites naturales. Recibe su nombre en honor a Venus, la diosa romana del amor (gr. Afrodita). Al ser el segundo objeto natural " +
-                "más brillante después de la Luna, puede ser visto en un cielo nocturno despejado a simple vista. Se trata de un planeta interior de tipo rocoso y " +
-                "terrestre, llamado con frecuencia el planeta hermano de la Tierra, ya que ambos son similares en cuanto a tamaño, masa y composición, aunque totalmente " +
-                "diferentes en cuestiones térmicas y atmosféricas (la temperatura media de Venus es de 463,85 ºC).", "La Tierra (del latín Terra,17\u200B deidad romana " +
-                "equivalente a Gea, diosa griega de la feminidad y la fecundidad) es un planeta del sistema solar que gira alrededor de su estrella —el Sol— en la tercera " +
-                "órbita más interna. Es el más denso y el quinto mayor de los ocho planetas del sistema solar. También es el mayor de los cuatro terrestres o rocosos.\n" +
-                "La Tierra se formó hace aproximadamente 4550 millones de años y la vida surgió unos mil millones de años después.18\u200B Es el hogar de millones de" +
-                " especies, incluidos los seres humanos y actualmente el único cuerpo astronómico donde se conoce la existencia de vida.19\u200B La atmósfera y otras " +
-                "condiciones abióticas han sido alteradas significativamente por la biosfera del planeta, favoreciendo la proliferación de organismos aerobios, así como la" +
-                " formación de una capa de ozono que junto con el campo magnético terrestre bloquean la radiación solar dañina, permitiendo así la vida en la Tierra" +
-                ".20\u200B Las propiedades físicas de la Tierra, la historia geológica y su órbita han permitido que la vida siga existiendo. Se estima que el planeta " +
-                "seguirá siendo capaz de sustentar vida durante otros 500 millones de años,21\u200B ya que según las previsiones actuales, pasado ese tiempo la creciente " +
-                "luminosidad del Sol terminará causando la extinción de la biosfera.", "Marte es el cuarto planeta en orden de distancia al Sol y el segundo más pequeño del " +
-                "sistema solar, después de Mercurio. Recibió su nombre en homenaje al dios de la guerra de la mitología romana (Ares en la mitología griega), y también es " +
-                "conocido como «el planeta rojo»3\u200B4\u200B debido a la apariencia rojiza5\u200B que le confiere el óxido de hierro predominante en su superficie. Marte" +
-                " es el planeta interior más alejado del Sol. Es un planeta telúrico con una atmósfera delgada de dióxido de carbono, y tiene dos satélites pequeños y de " +
-                "forma irregular, Fobos y Deimos (hijos del dios griego), que podrían ser asteroides capturados6\u200B7\u200B similares al asteroide troyano (5261) Eureka." +
-                " Sus características superficiales recuerdan tanto a los cráteres de la Luna como a los valles, desiertos y casquetes polares de la Tierra.", "Júpiter es " +
-                "el planeta más grande del sistema solar y el quinto en orden de lejanía al Sol.3\u200B Es un gigante gaseoso que forma parte de los denominados planetas " +
-                "exteriores. Recibe su nombre del dios romano Júpiter (Zeus en la mitología griega). Es uno de los objetos naturales más brillantes en un cielo nocturno" +
-                " despejado, superado solo por la Luna, Venus y algunas veces Marte.", "Saturno es el sexto planeta del sistema solar contando desde el Sol, el segundo en " +
-                "tamaño y masa después de Júpiter y el único con un sistema de anillos visible desde la Tierra. Su nombre proviene del dios romano Saturno. Forma parte de " +
-                "los denominados planetas exteriores o gaseosos. El aspecto más característico de Saturno son sus brillantes y grandes anillos. Antes de la invención del " +
-                "telescopio, Saturno era el más lejano de los planetas conocidos y, a simple vista, no parecía luminoso ni interesante. El primero en observar los anillos " +
-                "fue Galileo en 1610,1\u200B pero la baja inclinación de los anillos y la baja resolución de su telescopio le hicieron pensar en un principio que se trataba" +
-                " de grandes lunas.", "Urano es el séptimo planeta del sistema solar, el tercero de mayor tamaño, y el cuarto más masivo. Se llama así en honor de la divinidad " +
-                "griega del cielo Urano (del griego antiguo Οὐρανός), el padre de Crono (Saturno) y el abuelo de Zeus (Júpiter). Aunque es detectable a simple vista en el cielo " +
-                "nocturno, no fue catalogado como planeta por los astrónomos de la antigüedad debido a su escasa luminosidad y a la lentitud de su órbita.13\u200B William" +
-                " Herschel anunció su descubrimiento el 13 de marzo de 1781, ampliando las fronteras entonces conocidas del sistema solar, por primera vez en la historia moderna." +
-                " Urano es también el primer planeta descubierto por medio de un telescopio.", "Neptuno es el octavo planeta en distancia respecto al Sol y el más lejano del " +
-                "sistema solar. Forma parte de los denominados planetas exteriores, y dentro de estos, es uno de los gigantes helados, y es el primero que fue descubierto gracias" +
-                " a predicciones matemáticas. Su nombre fue puesto en honor al dios romano del mar —Neptuno—, y es el cuarto planeta en diámetro y el tercero más grande en masa. " +
-                "Su masa es diecisiete veces la de la Tierra y ligeramente mayor que la de su planeta «gemelo» Urano, que tiene quince masas terrestres y no es tan denso. En promedio," +
-                " Neptuno orbita el Sol a una distancia de 30,1 ua. Su símbolo astronómico es ♆, una versión estilizada del tridente del dios Neptuno."};
-        Integer[] idimagenes = {R.drawable.mercurio,R.drawable.venus,R.drawable.tierra,R.drawable.marte,R.drawable.jupiter,R.drawable.saturno,R.drawable.urano,R.drawable.neptuno};
-        AdapterListPlanet adaptador  = new AdapterListPlanet(this,nombres,Descripcion,detalles, idimagenes);
-        listView.setAdapter(adaptador);
+        listView = (ListView) findViewById(R.id.listaplanetas);
+        String[] nombres = {" Mercurio", " Venus", " Tierra", " Marte", " Jupiter", " Saturno", " Urano", " Neptuno"};
+        String[] breve = {"El cuerpo del planeta es rocoso y se caracteriza por la presencia de cráteres, resultado de los múltiples impactos de cuerpos celestes de menor tamaño. ",
+                "Venus es un planeta rocoso con un tamaño y composición similar a la Tierra, a excepción de su atmósfera, compuesta por gases tóxicos. Por otra parte, su núcleo es de níquel y hierro.",
+                "La Tierra es el tercer planeta orbitando alrededor del Sol. Su composición terrestre, la presencia de agua y una atmósfera compuesta por oxígeno, nitrógeno y vapor de agua, hicieron posible que se generaran las condiciones para la vida.",
+                "Marte es el cuarto planeta orbitando alrededor del Sol. Es conocido también como “el planeta rojo” debido al color de su superficie",
+                "Es el planeta más grande del sistema solar y el segundo cuerpo celeste más grande del sistema, después del Sol",
+                "Conocido por los siete anillos que lo rodean, Saturno también se caracteriza por la presencia de polos achatados producidos por su baja gravedad y rápido movimiento de rotación.",
+                "Urano es un planeta gaseoso compuesto por gas metano en mayor proporción, seguido de hidrógeno y helio.", "Es el planeta más lejano del sistema solar y el cuarto con respecto a su tamaño. Junto a Júpiter y Urano conforman el grupo de planetas gaseosos."};
 
+        String[] descripcion = {
+                "Se conoce como el “planeta de hierro” debido a que su composición es rica en este elemento químico en al menos un 70%. El porcentaje restante corresponde a elementos como helio, calcio,sodio, oxígeno y magnesio.\n" + "\n" + "El cuerpo del planeta es rocoso y se caracteriza por la presencia de cráteres, resultado de los múltiples impactos de cuerpos celestes de menor tamaño.",
+                "Venus es un planeta rocoso con un tamaño y composición similar a la Tierra, a excepción de su atmósfera, compuesta por gases tóxicos. Por otra parte, su núcleo es de níquel y hierro.\n" + "\n" + "El planeta Venus carece de agua, pero estudios realizados por la NASA y divulgados en 2019 concluyeron que hasta hace 700 millones de años sí tuvo agua y una atmósfera estable con condiciones para el desarrollo de vida orgánica.\n" + "\n" + "Debido a estas condiciones, Venus es un planeta candidato para la terraformación. Se trata de un proceso teórico de creación de condiciones óptimas para la vida, generadas con complejos sistemas de ingeniería.",
+                "La Tierra es el tercer planeta orbitando alrededor del Sol. Su composición terrestre, la presencia de agua y una atmósfera compuesta por oxígeno, nitrógeno y vapor de agua (entre otros componentes), hicieron posible que se generaran las condiciones para la vida.\n" + "\n" + "Otra características del planeta Tierra es la existencia de una capa de ozono que protege a todas las formas de vida de la radiación solar. Esto, y la presencia de grandes masas de agua en estado líquido que conforman un 70% de la composición del planeta, hacen de la Tierra el único planeta habitable, hasta ahora.\n" + "\n" + "Por otra parte, la Tierra cuenta con su propio satélite natural, la Luna.",
+                "Marte es el cuarto planeta orbitando alrededor del Sol. Es conocido también como “el planeta rojo” debido al color de su superficie, originado por la presencia de óxido de hierro. Su atmósfera es de dióxido de carbono y tiene dos satélites naturales: Fobos y Deimos.\n" + "\n" + "Aunque durante mucho tiempo Marte fue considerado un lugar inhabitable,esa percepción ha cambiado en las últimas décadas, debido a las pruebas que sugieren la presencia de grandes masas de agua congelada bajo su superficie.\n" + "\n" + "Marte es, junto con Venus, el otro planeta considerado para la terraformación, es decir, para la creación de condiciones que permitan la vida.",
+                "Es el planeta más grande del sistema solar y el segundo cuerpo celeste más grande del sistema, después del Sol. Júpiter tiene una composición gaseosa en la que el hidrógeno y el helio son los componentes principales.\n" + "\n" + "En su estructura interna, se especula que Júpiter contiene hidrógeno en estado líquido y un núcleo rocoso.",
+                "Conocido por los siete anillos que lo rodean, Saturno también se caracteriza por la presencia de polos achatados producidos por su baja gravedad y rápido movimiento de rotación.\n" + "\n" + "La atmósfera de Saturno está compuesta por un 96% de hidrógeno, mientras que el porcentaje restante es helio. Se especula que en su composición interna hay material rocoso cubierto por una capa de hidrógeno líquido.\n" + "\n" + "Como dato curioso, la temperatura de Saturno duplica a del Sol, llegando a los 11726.85 °C; mientras que la temperatura del Sol es de 5505 °C.",
+                "Urano es un planeta gaseoso compuesto por gas metano en mayor proporción, seguido de hidrógeno y helio. Es el tercer planeta en cuanto a tamaño y el séptimo con respecto a su órbita del Sol.\n" + "\n" + "Urano tiene una temperatura de -224 °C, lo cual lo convierte en el planeta con la atmósfera más fría del sistema solar. Además, tiene una serie de anillos que lo rodean pero a diferencia de Saturno, no son tan visibles y se ven como si estuviesen orbitando al planeta de manera vertical.\n" + "\n" + "Sin embargo, esta configuración de los anillos de Urano se trata de un efecto generado por su inclinación, que hace que sus polos se vean en el lugar que le corresponde al ecuador.",
+                "Es el planeta más lejano del sistema solar y el cuarto con respecto a su tamaño. Junto a Júpiter y Urano conforman el grupo de planetas gaseosos, ya que su atmósfera se compone principalmente de hidrógeno, helio y rastros de hidrocarburos. Su color azul característico de se debe al metano, mientras que su interior es rocoso y helado.\n" + "\n" + "Aunque es un planeta con temperaturas muy bajas (-218°C), se plantea la existencia de una fuente interna de energía que hace que Urano genere calor."};
+        Integer[] idimagenes = {R.drawable.mercurio, R.drawable.venus, R.drawable.tierra, R.drawable.marte, R.drawable.jupiter, R.drawable.saturno, R.drawable.urano, R.drawable.neptuno};
+        AdapterListPlanet adaptador = new AdapterListPlanet(this, nombres, breve, descripcion, idimagenes);
+        listView.setAdapter(adaptador);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, Planetas.class);
-                intent.putExtra("Descripcion", Descripcion[i]);
-                intent.putExtra("Nombre", nombres[i]);
+                intent.putExtra("DESC", descripcion[i]);
+                intent.putExtra("NAME", nombres[i]);
                 startActivity(intent);
 
             }
