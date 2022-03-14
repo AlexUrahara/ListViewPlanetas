@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent = new Intent(MainActivity.this, Planetas.class);
-                intent.putExtra("DESC", descripcion[i]);
-                intent.putExtra("NAME", nombres[i]);
-                intent.putExtra("IMAGE", idimagenes[i]);
+                intent.putExtra("DESC", descripcion[position]);
+                intent.putExtra("NAME", nombres[position]);
+                intent.putExtra("IMAGE", idimagenes[position]);
                 startActivity(intent);
 
             }

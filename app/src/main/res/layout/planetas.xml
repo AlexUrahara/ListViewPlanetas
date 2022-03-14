@@ -14,8 +14,7 @@
         <ImageView
             android:id="@+id/ImagenPlaneta"
             android:layout_width="370dp"
-            android:layout_height="200dp"
-            android:src="@drawable/mercurio"/>
+            android:layout_height="200dp"/>
 
         <TextView
             android:id="@+id/NombrePlaneta"

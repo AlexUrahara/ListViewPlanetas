@@ -23,6 +23,7 @@ public class Planetas extends AppCompatActivity {
 
         String description = getIntent().getStringExtra("DESC");
         String name = getIntent().getStringExtra("NAME");
+        String image = getIntent().getStringExtra("IMAGE");
 
         NombrePlaneta.setText(name);
         DescripcionPlaneta.setText(description);
